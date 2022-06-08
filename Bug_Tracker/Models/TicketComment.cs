@@ -13,5 +13,6 @@ namespace Bug_Tracker.Models
         public string Comment { get; set; }
         public string OwnerId { get; set; }
         public virtual ApplicationUser Owner { get; set; }
+        public DateTime Created { get; set; }
     }
 }
