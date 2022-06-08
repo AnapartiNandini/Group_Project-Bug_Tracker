@@ -11,11 +11,11 @@ namespace Bug_Tracker.Models
         public string ManagerId { get; set; }
         public virtual ApplicationUser Manager { get; set; }
         public string Name { get; set; }
-        public virtual List<ProjectDev> Developers { get; set; }
+        public virtual List<ProjectUser> Users { get; set; }
 
         public Project()
         {
-            Developers = new List<ProjectDev>();
+            Users = new List<ProjectUser>();
         }
     }
 }
