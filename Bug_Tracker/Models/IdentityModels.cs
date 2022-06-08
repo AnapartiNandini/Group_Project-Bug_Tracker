@@ -35,5 +35,7 @@ namespace Bug_Tracker.Models
         {
             return new ApplicationDbContext();
         }
+
+        public System.Data.Entity.DbSet<Bug_Tracker.Models.Tickets> Tickets { get; set; }
     }
 }
