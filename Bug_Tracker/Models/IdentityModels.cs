@@ -22,7 +22,7 @@ namespace Bug_Tracker.Models
     {
         public DbSet<Project> Projects { get; set; }
         public DbSet<Ticket> Tickets { get; set; }
-        public DbSet<TicketPriority> TicketPriorites { get; set; }
+        public DbSet<TicketPriority> TicketPriorities { get; set; }
         public DbSet<TicketType> TicketTypes { get; set; }
         public DbSet<TicketStatus> TicketStatuses { get; set; }
 
