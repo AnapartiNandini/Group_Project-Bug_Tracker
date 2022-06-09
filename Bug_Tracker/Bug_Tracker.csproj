@@ -191,15 +191,33 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+<<<<<<< HEAD
+    <Compile Include="Migrations\202206081616307_InitialData.cs" />
+    <Compile Include="Migrations\202206081616307_InitialData.designer.cs">
+      <DependentUpon>202206081616307_InitialData.cs</DependentUpon>
+=======
     <Compile Include="Migrations\202206081526212_InitialMigration.cs" />
     <Compile Include="Migrations\202206081526212_InitialMigration.designer.cs">
       <DependentUpon>202206081526212_InitialMigration.cs</DependentUpon>
+>>>>>>> f62a318e4d909abcf1a1ba3d186bfdcb5e4ec6e0
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+<<<<<<< HEAD
+    <Compile Include="Models\Project.cs" />
+    <Compile Include="Models\ProjectUser.cs" />
+    <Compile Include="Models\Ticket.cs" />
+    <Compile Include="Models\TicketAttatchment.cs" />
+    <Compile Include="Models\TicketComment.cs" />
+    <Compile Include="Models\TicketHistory.cs" />
+    <Compile Include="Models\TicketNotification.cs" />
+    <Compile Include="Models\TicketPriority.cs" />
+    <Compile Include="Models\TicketType.cs" />
+=======
     <Compile Include="Models\Tickets.cs" />
+>>>>>>> f62a318e4d909abcf1a1ba3d186bfdcb5e4ec6e0
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -218,6 +236,7 @@
     <None Include=".dockerignore">
       <DependentUpon>Dockerfile</DependentUpon>
     </None>
+    <Compile Include="Models\TicketStatus.cs" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -286,8 +305,13 @@
     <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
   <ItemGroup>
+<<<<<<< HEAD
+    <EmbeddedResource Include="Migrations\202206081616307_InitialData.resx">
+      <DependentUpon>202206081616307_InitialData.cs</DependentUpon>
+=======
     <EmbeddedResource Include="Migrations\202206081526212_InitialMigration.resx">
       <DependentUpon>202206081526212_InitialMigration.cs</DependentUpon>
+>>>>>>> f62a318e4d909abcf1a1ba3d186bfdcb5e4ec6e0
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
