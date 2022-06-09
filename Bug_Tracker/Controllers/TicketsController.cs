@@ -27,7 +27,7 @@ namespace Bug_Tracker.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Tickets tickets = db.Tickets.Find(id);
+            Ticket tickets = db.Tickets.Find(id);
             if (tickets == null)
             {
                 return HttpNotFound();
@@ -46,7 +46,7 @@ namespace Bug_Tracker.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Name,Description")] Tickets tickets)
+        public ActionResult Create([Bind(Include = "Id,Name,Description")] Ticket tickets)
         {
             if (ModelState.IsValid)
             {
@@ -65,7 +65,7 @@ namespace Bug_Tracker.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Tickets tickets = db.Tickets.Find(id);
+            Ticket tickets = db.Tickets.Find(id);
             if (tickets == null)
             {
                 return HttpNotFound();
@@ -78,7 +78,7 @@ namespace Bug_Tracker.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Name,Description")] Tickets tickets)
+        public ActionResult Edit([Bind(Include = "Id,Name,Description")] Ticket tickets)
         {
             if (ModelState.IsValid)
             {
@@ -96,7 +96,7 @@ namespace Bug_Tracker.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Tickets tickets = db.Tickets.Find(id);
+            Ticket tickets = db.Tickets.Find(id);
             if (tickets == null)
             {
                 return HttpNotFound();
@@ -109,7 +109,7 @@ namespace Bug_Tracker.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Tickets tickets = db.Tickets.Find(id);
+            Ticket tickets = db.Tickets.Find(id);
             db.Tickets.Remove(tickets);
             db.SaveChanges();
             return RedirectToAction("Index");
