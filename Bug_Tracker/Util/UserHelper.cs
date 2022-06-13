@@ -38,13 +38,13 @@ namespace Bug_Tracker.Util
 
         public static void AddRole(ApplicationUser user, string name)
         {
-            IdentityRole role = db.Roles.ToList().Find(r => r.Name == name);
+            IdentityRole role = RoleHelper.GetByName(name);
             if (user.Roles.ToList().Find(r => r.UserId == role.Id) == null) user.Roles.Add(new IdentityUserRole() { UserId = user.Id, RoleId = role.Id });
         }
 
         public static void RemoveRole(ApplicationUser user, string name)
         {
-            IdentityRole role = db.Roles.ToList().Find(r => r.Name == name);
+            IdentityRole role = RoleHelper.GetByName(name);
             IdentityUserRole userRole = user.Roles.ToList().Find(r => r.RoleId == role.Id);
             user.Roles.Remove(userRole);
         }
