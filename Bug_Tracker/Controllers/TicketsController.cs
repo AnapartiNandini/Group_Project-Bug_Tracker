@@ -7,6 +7,8 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using Bug_Tracker.Models;
+using Bug_Tracker.Util;
+using Microsoft.AspNet.Identity;
 
 namespace Bug_Tracker.Controllers
 {
@@ -21,13 +23,9 @@ namespace Bug_Tracker.Controllers
         }
 
         // GET: Tickets/Details/5
-        public ActionResult Details(int? id)
+        public ActionResult Details(int id)
         {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Ticket tickets = db.Tickets.Find(id);
+            Ticket tickets = TicketHelper.GetTicket(id);
             if (tickets == null)
             {
                 return HttpNotFound();
@@ -46,26 +44,21 @@ namespace Bug_Tracker.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Name,Description")] Ticket tickets)
+        public ActionResult Create(string title, string content, int type)
         {
             if (ModelState.IsValid)
             {
-                db.Tickets.Add(tickets);
-                db.SaveChanges();
+                TicketHelper.Create(UserHelper.GetById(User.Identity.GetUserId()), title, content, TicketHelper.GetType(type), TicketHelper.GetPriority(1));
                 return RedirectToAction("Index");
             }
 
-            return View(tickets);
+            return View();
         }
 
         // GET: Tickets/Edit/5
-        public ActionResult Edit(int? id)
+        public ActionResult Edit(int id)
         {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Ticket tickets = db.Tickets.Find(id);
+            Ticket tickets = TicketHelper.GetTicket(id);
             if (tickets == null)
             {
                 return HttpNotFound();
@@ -78,41 +71,9 @@ namespace Bug_Tracker.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Name,Description")] Ticket tickets)
+        public ActionResult Edit(int Id, string title, string content, int type, int status, int priority)
         {
-            if (ModelState.IsValid)
-            {
-                db.Entry(tickets).State = EntityState.Modified;
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
-            return View(tickets);
-        }
-
-        // GET: Tickets/Delete/5
-        public ActionResult Delete(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Ticket tickets = db.Tickets.Find(id);
-            if (tickets == null)
-            {
-                return HttpNotFound();
-            }
-            return View(tickets);
-        }
-
-        // POST: Tickets/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
-        {
-            Ticket tickets = db.Tickets.Find(id);
-            db.Tickets.Remove(tickets);
-            db.SaveChanges();
-            return RedirectToAction("Index");
+            return View(TicketHelper.Edit(Id, title, content, TicketHelper.GetType(type), TicketHelper.GetPriority(priority), TicketHelper.GetStatus(status)));
         }
 
         protected override void Dispose(bool disposing)
