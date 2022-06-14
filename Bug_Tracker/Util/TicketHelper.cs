@@ -39,7 +39,9 @@ namespace Bug_Tracker.Util
         {
             Ticket tic = new Ticket();
             tic.Owner = owner;
-            return Edit(tic.Id, title, content, type, priority, GetStatus(1));
+            Edit(tic.Id, title, content, type, priority, GetStatus(1));
+            db.Tickets.Add(tic);
+            return tic;
         }
 
         public static Ticket Edit(int Id, string title, string content, TicketType type, TicketPriority priority, TicketStatus status)
@@ -52,6 +54,7 @@ namespace Bug_Tracker.Util
             tic.Status = status;
 
             db.SaveChanges();
+
             return tic;
         }
 
@@ -59,6 +62,7 @@ namespace Bug_Tracker.Util
         {
             Ticket tic = GetTicket(Id);
             tic.AssignedDev = user;
+            db.SaveChanges();
             return tic;
         }
     }
