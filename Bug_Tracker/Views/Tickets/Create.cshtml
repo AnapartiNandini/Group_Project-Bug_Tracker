@@ -1,16 +1,46 @@
-﻿@model Bug_Tracker.Models.Tickets
+﻿@model Bug_Tracker.Models.Ticket
 
 @{
     ViewBag.Title = "Create";
 }
+<div class="side-container">
+    <div class="side-planner">
+        <div class="side-plan">
+            <span class="material-symbols-outlined">
+                today
+            </span>
+            <p>Projects</p>
+        </div>
+        <div class="side-plan">
+            <span class="material-symbols-outlined">
+                calendar_month
+            </span>
+            <p>Tickets</p>
+        </div>
+        <div class="side-plan">
+            <span class="material-symbols-outlined">
+                checklist
+            </span>
+            <p>Role Management</p>
+        </div>
+    </div>
+</div>
 
-<h2>Create</h2>
+<div class="add-new-project">
+    <h2>Add New Ticket</h2>
+    <form class="add-project-form">
+        <input type="text" placeholder="Title" />
+        <input type="date" placeholder="Date" />
+        <textarea placeholder="Description"></textarea>
+        <button type="submit">Add Ticket</button>
+    </form>
+</div>
 
 
-@using (Html.BeginForm()) 
+<!--@using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal">
         <h4>Tickets</h4>
         <hr />
@@ -45,4 +75,4 @@
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
-}
+}-->

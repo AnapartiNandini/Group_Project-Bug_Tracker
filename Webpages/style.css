@@ -1,91 +1,62 @@
-﻿body {
-    padding-top: 50px;
-    padding-bottom: 20px;
-}
-
-/* Set padding to keep content from hitting the edges */
-.body-content {
-    padding-left: 15px;
-    padding-right: 15px;
-}
-
-/* Override the default bootstrap behavior where horizontal description lists 
-   will truncate terms that are too long to fit in the left column 
-*/
-.dl-horizontal dt {
-    white-space: normal;
-}
-
-/* Set width on the form input elements since they're 100% wide by default */
-input,
-select,
-textarea {
-    max-width: 280px;
-}
-
-body {
-    margin: 0;
-    padding: 0;
-    background-color: white;
-    font-family: 'Arial';
-}
-
-.login {
-    width: 382px;
-    overflow: hidden;
-    margin: auto;
-    margin: 20 0 0 450px;
-    padding: 80px;
-    background: grey;
-    border-radius: 15px;
-}
-
-h2 {
-    text-align: center;
-    color: black;
-    padding: 20px;
-}
-
-label {
-    color: black;
-    font-size: 17px;
-}
-
-#Uname {
-    width: 300px;
-    height: 30px;
-    border: none;
-    border-radius: 3px;
-    padding-left: 8px;
-}
-
-#Pass {
-    width: 300px;
-    height: 30px;
-    border: none;
-    border-radius: 3px;
-    padding-left: 8px;
-}
-
-#log {
-    width: 300px;
-    height: 30px;
-    border: none;
-    border-radius: 17px;
-    padding-left: 7px;
-    color: black;
-}
-
-span {
-    color: white;
-    font-size: 17px;
-}
-
-a {
-    float: right;
-    color: grey
-}
-
+body  
+{  
+    margin: 0;  
+    padding: 0;  
+    background-color: white;  
+    font-family: 'Arial';  
+}  
+.login{  
+        width: 382px;  
+        overflow: hidden;  
+        margin: auto;  
+        margin: 20 0 0 450px;  
+        padding: 80px;  
+        background: grey;  
+        border-radius: 15px ;  
+          
+}  
+h2{  
+    text-align: center;  
+    color: black;  
+    padding: 20px;  
+}  
+label{  
+    color: black;  
+    font-size: 17px;  
+}  
+#Uname{  
+    width: 300px;  
+    height: 30px;  
+    border: none;  
+    border-radius: 3px;  
+    padding-left: 8px;  
+}  
+#Pass{  
+    width: 300px;  
+    height: 30px;  
+    border: none;  
+    border-radius: 3px;  
+    padding-left: 8px;  
+      
+}  
+#log{  
+    width: 300px;  
+    height: 30px;  
+    border: none;  
+    border-radius: 17px;  
+    padding-left: 7px;  
+    color: black;  
+  
+  
+}  
+span{  
+    color: white;  
+    font-size: 17px;  
+}  
+a{  
+    float: right; 
+    color: grey 
+}  
 * {
     font-family: 'Jost', sans-serif;
 }
@@ -115,15 +86,15 @@ h2 {
 }
 
 .navbar {
-    display: flex;
-    flex-direction: row;
-    align-content: center;
-    justify-content: space-between;
-    max-width: 1200px;
-    margin: auto;
+   display: flex;
+   flex-direction: row;
+   align-content: center;
+   justify-content: space-between;
+   max-width: 1200px;
+   margin: auto;
 }
 
-.ppic {
+.ppic{
     width: 40px;
     height: 40px;
 }
@@ -135,20 +106,20 @@ h2 {
     align-items: center;
 }
 
-    .right p {
-        display: flex;
-        align-items: center;
-    }
+.right p {
+    display: flex;
+    align-items: center;
+}
 
-    .right a {
-        color: grey;
-        text-decoration: none;
-        padding: 8px;
-    }
+.right a {
+    color: grey;
+    text-decoration: none;
+    padding: 8px;
+}
 
-    .right img {
-        padding: 8px;
-    }
+.right img {
+    padding: 8px;
+}
 
 .left {
     display: flex;
@@ -179,9 +150,9 @@ h2 {
     border-bottom: 0.15px solid grey;
 }
 
-    .side-plan p {
-        margin-left: 5px;
-    }
+.side-plan p{
+    margin-left: 5px;
+}
 
 .main-container {
     margin: 0 auto;
@@ -245,10 +216,10 @@ ul {
     flex-direction: column;
 }
 
-    .add-project-form input {
-        margin-bottom: 10px;
-        padding: 15px;
-    }
+.add-project-form input {
+    margin-bottom: 10px;
+    padding: 15px;
+}
 
 .add-new-project textarea {
     padding: 50px;
